@@ -4,17 +4,12 @@ function compute()
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
 
-    if (principal == "") { 
-        alert("Amount can't by empty or alphabet character");
+    if (principal == "" || principal <= 0) { 
+         alert("Enter a positive number");
         document.getElementById("principal").focus();
         return false;
-    }else{
-        if (principal <= 0) { 
-            alert("Enter a positive number");
-            document.getElementById("principal").focus();
-            return false;
-        }
     }
+       
     var date = new Date().getFullYear(); 
     let future= parseInt(date)+parseInt(years);
     let interest= principal * years * rate / 100;
